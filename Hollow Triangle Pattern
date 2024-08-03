@@ -12,15 +12,13 @@ Code:
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int n,m=1;
-    cout<<"N should be odd ";
+    int n,m;
     cin>>n;
-    m+=n/2;
+    m=2*n-1;
     for(int i=1;i<=n;i++){
-        int starToPrint = abs(m-i)+1;
         for(int j=1;j<=m;j++){
-            if(m-j+1<=starToPrint)cout<<"*";
-            cout<<" ";
+            if(j==n+i-1 or j==n-i+1 or (i==n and j%2))cout<<"*";
+            else cout<<" ";
         }
         cout<<endl;
     }
